@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <title>萍乡实验高级中学学生代表大会海报</title>
   <style>
-    /* 打印尺寸 */
+    /* 页面物理尺寸，保证打印时按 1100×1900 mm 输出 */
     @page {
       size: 1100mm 1900mm;
       margin: 0;
     }
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       width: 1100mm;
       height: 1900mm;
       font-family: "Roboto", "Noto Sans SC", sans-serif;
-      background-color: #E3F2FD; /* 浅蓝背景 */
-      color: #0D47A1;           /* 深蓝文字 */
+      background-color: #E3F2FD;
+      color: #0D47A1;
       box-sizing: border-box;
     }
     .container {
@@ -25,7 +25,6 @@
       flex-direction: column;
       height: 100%;
     }
-    /* 标题区 */
     .title {
       text-align: center;
       font-size: 36mm;
@@ -33,7 +32,6 @@
       margin-bottom: 10mm;
       color: #1565C0;
     }
-    /* 卡片基础 */
     .card {
       background-color: #FFFFFF;
       border-radius: 8px;
@@ -41,11 +39,10 @@
       padding: 8mm;
       box-sizing: border-box;
     }
-    /* 二栏布局 */
     .columns {
       display: flex;
       gap: 10mm;
-      margin-bottom: 6mm; /* 缩小与下方“执行监督”的间距 */
+      margin-bottom: 6mm;
     }
     .col {
       flex: 1;
@@ -53,7 +50,16 @@
       flex-direction: column;
     }
     .section {
-      margin-bottom: 6mm; /* 全局段落底部间距 */
+      margin-bottom: 6mm;
+    }
+    .card-header {
+      background-color: #42A5F5;
+      color: #FFFFFF;
+      font-size: 16mm;
+      font-weight: 500;
+      padding: 4mm 6mm;
+      border-radius: 4px 4px 0 0;
+      margin: -8mm -8mm 8mm -8mm;
     }
     .section-title {
       font-size: 18mm;
@@ -72,27 +78,23 @@
       font-weight: 500;
       color: #1565C0;
     }
-    .subsection p,
-    .subsection ul li {
+    .subsection p {
       font-size: 12mm;
       line-height: 1.3;
       margin: 2mm 0;
     }
-    .subsection ul {
-      padding-left: 6mm;
+    /* 去掉 ul/li 前点和缩进 */
+    ul {
       margin: 0;
+      padding-left: 0;
     }
-    /* 卡片色块标题 */
-    .card-header {
-      background-color: #42A5F5;
-      color: #FFFFFF;
-      font-size: 16mm;
-      font-weight: 500;
-      padding: 4mm 6mm;
-      border-radius: 4px 4px 0 0;
-      margin: -8mm -8mm 8mm -8mm;
+    ul li {
+      font-size: 12mm;
+      line-height: 1.3;
+      margin: 2mm 0;
+      list-style: none;
+      padding-left: 0;
     }
-    /* 底部 */
     .footer {
       text-align: center;
       font-size: 16mm;
@@ -107,8 +109,9 @@
       萍乡实验高级中学学生代表大会第一次全体会议<br />
       提案表决结果及学校处理方案
     </div>
+
     <div class="columns">
-      <!-- 左栏：会议基本情况 -->
+      <!-- 左栏 -->
       <div class="col">
         <div class="card section">
           <div class="card-header">一、会议基本情况</div>
@@ -135,11 +138,10 @@
           </div>
         </div>
       </div>
-      <!-- 右栏：提案及方案 -->
+      <!-- 右栏 -->
       <div class="col">
         <div class="card section">
           <div class="card-header">二、提案表决结果及学校实施方案</div>
-          <!-- 提案1 -->
           <div class="subsection">
             <h4>提案1：宿舍空调开放管理方案</h4>
             <p><strong>表决结果：</strong>19票赞成通过</p>
@@ -156,7 +158,6 @@
               <li>③ 冬季室温低于10℃时，由生活老师统一开启制热</li>
             </ul>
           </div>
-          <!-- 提案2 -->
           <div class="subsection">
             <h4>提案2：食堂餐饮服务优化方案</h4>
             <p><strong>表决结果：</strong>19票赞成通过</p>
@@ -167,7 +168,6 @@
               <li>④ 设立定期反馈渠道，持续优化餐饮服务</li>
             </ul>
           </div>
-          <!-- 提案3 -->
           <div class="subsection">
             <h4>提案3：校园雨棚增设方案</h4>
             <p><strong>表决结果：</strong>20票赞成通过</p>
@@ -185,6 +185,7 @@
         </div>
       </div>
     </div>
+
     <!-- 执行监督 -->
     <div class="card section">
       <div class="card-header">三、执行监督</div>
@@ -196,7 +197,7 @@
         <li>校长信箱</li>
       </ul>
     </div>
-    <!-- 底部 -->
+
     <div class="footer">
       萍乡实验高级中学学生代表大会<br />
       2025年5月20日

@@ -2,226 +2,276 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>学生代表大会公告</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>学生代表大会公示公告</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1565C0;
-            --secondary: #42A5F5;
-            --accent: #FF8F00;
-        }
-
         body {
             margin: 0;
-            padding: 3cm;
+            padding: 1cm;
             width: 1100mm;
             height: 1900mm;
             font-family: 'Noto Sans SC', sans-serif;
-            background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+            background: #fff;
+            line-height: 1.3;
         }
 
-        .container {
-            background: white;
-            border-radius: 32px;
-            box-shadow: 0 12px 48px rgba(0,0,0,0.15);
-            padding: 6rem;
+        /* 主标题样式 */
+        .header {
+            border: 8px solid #004A80;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: #E6F3FF;
         }
-
-        .title-block {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding: 4rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 24px;
-            color: white;
-        }
-
         .main-title {
-            font-size: 6.4rem;
-            margin: 2rem 0;
-            letter-spacing: 3px;
+            font-size: 8rem;
+            color: #004A80;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-
         .sub-title {
-            font-size: 4.2rem;
-            opacity: 0.9;
+            font-size: 4.5rem;
+            color: #C00;
+            text-align: center;
+            margin: 1rem 0;
         }
 
-        .card {
-            background: white;
-            padding: 4rem;
-            border-radius: 24px;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.1);
-            margin: 3rem 0;
-            border-left: 12px solid var(--accent);
+        /* 内容区块 */
+        .content-block {
+            border: 4px solid #ddd;
+            padding: 2rem;
+            margin: 1rem 0;
+            background: #fff;
+        }
+        .section-title {
+            font-size: 5rem;
+            color: #004A80;
+            border-bottom: 4px solid #C00;
+            padding-bottom: 1rem;
+            margin: 1rem 0;
         }
 
-        .card-title {
-            font-size: 4rem;
-            color: var(--primary);
-            margin: 0 0 3rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .content-text {
-            font-size: 3rem;
-            line-height: 1.8;
-            color: #444;
-        }
-
-        .proposal-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
-            margin-top: 4rem;
-        }
-
-        .proposal-card {
-            background: #f8f9fa;
-            padding: 4rem;
-            border-radius: 20px;
-            position: relative;
-            border: 3px solid var(--secondary);
-        }
-
-        .vote-badge {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            background: #4CAF50;
-            color: white;
-            padding: 1.5rem 3rem;
-            border-radius: 12px;
-            font-size: 3rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
+        /* 紧凑表格布局 */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 2rem 0;
-            padding-left: 4rem;
-            position: relative;
-            font-size: 2.8rem;
+        }
+        .info-table td {
+            font-size: 3.8rem;
+            padding: 1.5rem;
+            border: 2px solid #ddd;
+            vertical-align: top;
+        }
+        .info-table td:first-child {
+            width: 30%;
+            background: #f8f8f8;
+            font-weight: bold;
         }
 
-        li:before {
-            content: "•";
-            color: var(--accent);
+        /* 提案卡片 */
+        .proposal-box {
+            border: 4px solid #004A80;
+            padding: 2rem;
+            margin: 2rem 0;
+            background: #fff;
+            page-break-inside: avoid;
+        }
+        .proposal-title {
+            font-size: 4.2rem;
+            color: #C00;
+            margin: 0 0 1rem;
+        }
+        .vote-result {
+            font-size: 3.5rem;
+            color: #090;
+            float: right;
+            background: #E8FFE8;
+            padding: 0.5rem 2rem;
+            border: 2px solid #090;
+        }
+
+        /* 列表样式 */
+        .compact-list {
+            columns: 2;
+            column-gap: 4rem;
+            margin: 1rem 0;
+        }
+        .compact-list li {
+            font-size: 3.5rem;
+            margin: 1rem 0;
+            padding-left: 3rem;
+            break-inside: avoid;
+            position: relative;
+        }
+        .compact-list li:before {
+            content: "◆";
+            color: #004A80;
             position: absolute;
             left: 0;
-            font-size: 3.5rem;
-            line-height: 1;
         }
 
+        /* 底部信息 */
         .footer {
             text-align: center;
-            margin-top: 6rem;
-            padding: 4rem;
-            background: #f5f5f5;
-            border-radius: 24px;
+            margin-top: 3rem;
+            padding: 3rem;
+            background: #f0f0f0;
+            border: 4px solid #ddd;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 标题区块 -->
-        <div class="title-block">
-            <h1 class="main-title">萍乡实验高级中学</h1>
-            <h2 class="sub-title">学生代表大会第一次全体会议</h2>
-            <h2 class="sub-title">提案表决结果及学校处理方案</h2>
-        </div>
+    <div class="header">
+        <h1 class="main-title">萍乡实验高级中学</h1>
+        <h2 class="sub-title">学生代表大会第一次全体会议公告</h2>
+        <h2 class="sub-title">提案表决结果及处理方案</h2>
+    </div>
 
-        <!-- 会议基本情况 -->
-        <div class="card">
-            <h2 class="card-title">一、会议基本情况</h2>
-            <div class="content-text">
-                <p>▶ 会议时间：2025年5月14日</p>
-                <p>▶ 会议地点：527会议室</p>
-                <p>▶ 参会人员：</p>
-                <ul>
-                    <li>学代会主席团全体成员</li>
-                    <li>各学院提案小组成员</li>
-                    <li>各学院负责人代表</li>
-                    <li>校长室代表</li>
-                </ul>
-                <p>▶ 有效表决票数：34票</p>
-            </div>
-        </div>
-
-        <!-- 提案表决结果 -->
-        <div class="card">
-            <h2 class="card-title">二、提案表决结果及实施方案</h2>
-            <div class="proposal-grid">
-                <!-- 提案1 -->
-                <div class="proposal-card">
-                    <div class="vote-badge">19票通过</div>
-                    <h3 style="font-size:3.6rem; margin:0 0 2rem;">宿舍空调开放管理方案</h3>
-                    <ul>
-                        <li>学校调研情况：</li>
-                        <li>① 校园电力系统总功率限制</li>
-                        <li>② 需统一管理保障健康</li>
-                        <li>③ 避免设备过度使用</li>
-                        <li>实施方案：</li>
-                        <li>① 安装室内温度计</li>
-                        <li>② 夏季＞26℃统一制冷</li>
-                        <li>③ 冬季＜10℃统一制热</li>
-                    </ul>
-                </div>
-
-                <!-- 提案2 -->
-                <div class="proposal-card">
-                    <div class="vote-badge">19票通过</div>
-                    <h3 style="font-size:3.6rem; margin:0 0 2rem;">食堂餐饮服务优化方案</h3>
-                    <ul>
-                        <li>具体改进措施：</li>
-                        <li>① 调整烹饪方式比例</li>
-                        <li>② 绩效考核挂钩机制</li>
-                        <li>③ 新菜品品鉴会</li>
-                        <li>④ 定期反馈渠道</li>
-                    </ul>
-                </div>
-
-                <!-- 提案3 -->
-                <div class="proposal-card">
-                    <div class="vote-badge">20票通过</div>
-                    <h3 style="font-size:3.6rem; margin:0 0 2rem;">校园雨棚增设方案</h3>
-                    <ul>
-                        <li>建设规划：</li>
-                        <li>① 优先5号入口雨棚</li>
-                        <li>暂缓实施原因：</li>
-                        <li>① 统筹整体规划</li>
-                        <li>② 消防安全规范</li>
-                        <li>③ 避免安全隐患</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- 执行监督 -->
-        <div class="card">
-            <h2 class="card-title">三、执行监督</h2>
-            <div class="content-text" style="font-size:3.2rem;">
-                <p>监督渠道：</p>
-                <div style="display: flex; gap: 4rem; margin-top:3rem;">
-                    <div style="padding:2rem 4rem; background:var(--primary); color:white; border-radius:12px;">
-                        学代会代表
+    <!-- 会议基本情况 -->
+    <div class="content-block">
+        <h2 class="section-title">一、会议基本情况</h2>
+        <table class="info-table">
+            <tr>
+                <td>会议时间</td>
+                <td>2025年5月14日 14:00-17:00</td>
+            </tr>
+            <tr>
+                <td>会议地点</td>
+                <td>校本部527会议室</td>
+            </tr>
+            <tr>
+                <td>参会人员</td>
+                <td>
+                    <div class="compact-list">
+                        <ul>
+                            <li>学代会主席团全体成员（7人）</li>
+                            <li>各学院提案小组成员（12人）</li>
+                            <li>各学院负责人代表（9人）</li>
+                            <li>校长室代表（3人）</li>
+                            <li>后勤处代表（3人）</li>
+                        </ul>
                     </div>
-                    <div style="padding:2rem 4rem; background:var(--secondary); color:white; border-radius:12px;">
-                        校长信箱
-                    </div>
-                </div>
-            </div>
+                </td>
+            </tr>
+            <tr>
+                <td>有效票数</td>
+                <td>34票（通过标准：赞成票≥17票）</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 提案表决结果 -->
+    <div class="content-block">
+        <h2 class="section-title">二、提案表决及实施方案</h2>
+        
+        <div class="proposal-box">
+            <span class="vote-result">19票赞成通过</span>
+            <h3 class="proposal-title">提案1：宿舍空调管理方案</h3>
+            <table class="info-table">
+                <tr>
+                    <td>调研情况</td>
+                    <td>
+                        <ul class="compact-list">
+                            <li>校园电力总功率限制</li>
+                            <li>学生体质差异管理需求</li>
+                            <li>设备使用寿命考量</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>实施方案</td>
+                    <td>
+                        <ul class="compact-list">
+                            <li>全宿舍安装数字温度计</li>
+                            <li>夏季≥26℃统一制冷</li>
+                            <li>冬季≤10℃统一制热</li>
+                            <li>每日开放时长≤10小时</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
         </div>
 
-        <div class="footer">
-            <p style="font-size:3.2rem; margin:0;">萍乡实验高级中学学生代表大会</p>
-            <p style="font-size:3rem; color:#666; margin:1rem 0;">2025年5月20日</p>
+        <div class="proposal-box">
+            <span class="vote-result">19票赞成通过</span>
+            <h3 class="proposal-title">提案2：食堂服务优化方案</h3>
+            <table class="info-table">
+                <tr>
+                    <td>具体措施</td>
+                    <td>
+                        <ul class="compact-list">
+                            <li>重口味菜品比例降至30%</li>
+                            <li>建立打菜量考核制度</li>
+                            <li>每月新菜品品鉴会</li>
+                            <li>设立线上反馈平台</li>
+                            <li>每周公示菜单营养素</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
         </div>
+
+        <div class="proposal-box">
+            <span class="vote-result">20票赞成通过</span>
+            <h3 class="proposal-title">提案3：校园雨棚建设方案</h3>
+            <table class="info-table">
+                <tr>
+                    <td>建设计划</td>
+                    <td>
+                        <ul class="compact-list">
+                            <li>优先建设5号入口雨棚（长15m×宽3m）</li>
+                            <li>使用防滑钢化玻璃材质</li>
+                            <li>配套排水沟改造工程</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>暂缓点位</td>
+                    <td>
+                        <ul class="compact-list">
+                            <li>食堂后门（消防通道限制）</li>
+                            <li>超市楼梯处（卫生死角风险）</li>
+                            <li>实验楼西门（规划冲突）</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 执行监督 -->
+    <div class="content-block">
+        <h2 class="section-title">三、执行监督</h2>
+        <table class="info-table">
+            <tr>
+                <td>监督渠道</td>
+                <td>
+                    <div style="font-size:4rem; line-height:1.5;">
+                        <strong>学工处窗口：</strong>行政楼201室<br>
+                        <strong>校长信箱：</strong>xzxx@pxsygz.com<br>
+                        <strong>线上平台：</strong>学校官网-意见箱
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>反馈要求</td>
+                <td>
+                    <ul class="compact-list">
+                        <li>需实名反馈并附联系方式</li>
+                        <li>写明具体问题及建议</li>
+                        <li>15个工作日内答复</li>
+                        <li>重大事项公示处理进度</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p style="font-size:4rem; margin:0;">萍乡实验高级中学学生代表大会</p>
+        <p style="font-size:3.5rem; color:#666; margin:1rem 0;">公示日期：2025年5月20日-6月20日</p>
+        <p style="font-size:3rem; color:#999;">监督电话：0799-12345678（工作日8:30-17:00）</p>
     </div>
 </body>
 </html>
